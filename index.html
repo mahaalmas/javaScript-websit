@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles .css">
+    <title>Password Manager</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-pane">
+            <div id="passwordGenerator">
+                <h2>Password Generator</h2>
+                <label for="passwordLength">Password Length:</label>
+                <input type="number" id="passwordLength" min="6" max="30" value="12">
+                <br>
+                <input type="checkbox" id="includeUppercase"> <label for="includeUppercase">Include Uppercase</label>
+                <br>
+                <input type="checkbox" id="includeLowercase" checked> <label for="includeLowercase">Include Lowercase</label>
+                <br>
+                <input type="checkbox" id="includeNumbers" checked> <label for="includeNumbers">Include Numbers</label>
+                <br>
+                <input type="checkbox" id="includeSpecialChars"> <label for="includeSpecialChars">Include Special Characters</label>
+                <br>
+                <button type="button" onclick="generatePassword()">Generate Password</button>
+                <input type="text" id="generatedPassword" readonly>
+            </div>
+        </div>
+        <div class="right-pane">
+            <h1>Password Manager</h1>
+            <form id="passwordForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <br>
+                <div class="password-strength">
+                    <label>Password Strength:</label>
+                    <progress id="passwordStrength" max="100" value="0"></progress>
+                </div>
+                <br>
+                <button type="button" onclick="savePassword()">Save Password</button>
+            </form>
+            <div id="passwordList"></div>
+        </div>
+    </div>
+    
+    <div class="actions">
+        <button onclick="exportPasswords()">Export Passwords</button>
+        <input type="file" id="importFile" accept=".json" onchange="importPasswords()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

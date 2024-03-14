@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.left-pane,
+.right-pane,
+/* Add your existing styles here */
+.container {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(163, 97, 172);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-pane {
+    border-radius: 10px 0 0 10px;
+}
+
+.right-pane {
+    border-radius: 0 10px 10px 0;
+}
+
+/* Additional or modified styles for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(184, 129, 129, 0.1);
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #440c33;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#passwordStrength {
+    margin-top: 10px;
+}
